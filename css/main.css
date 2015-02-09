@@ -1,1 +1,13 @@
-body {}
+body {
+    margin: 0;
+    padding: 0;
+}
+footer {
+     width: 100%;    
+}
+.clamp-module {
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;  
+}

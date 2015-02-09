@@ -9,11 +9,12 @@ layout: default
           <div class="card cyan lighten-2">
             <div class="card-content white-text">
               <span class="card-title">{{ post.title }}</span>
-              <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+              <p>{{ post.date | date: "%b %-d, %Y" }}</p><br/>
+              <x class="clamp-module">{{ post.content | strip_html | truncatewords: 100}}</x>
             </div>
             <div class="card-action">
-              <a class="white cyan-text lighten-1 waves-effect waves-cyan waves-light btn" href="{{ post.url | prepend: site.baseurl }}">View Post</a>
-              <a class="white cyan-text lighten-1 waves-effect waves-cyan waves-light btn" href='#'>Share on Facebook</a>
+              <button class="white cyan-text lighten-5 waves-effect waves-cyan waves-light btn" onclick="window.location.href='{{ post.url | prepend: site.baseurl }}'">View Post</button>
+              <button class="white cyan-text lighten-5 waves-effect waves-cyan waves-light btn" href='#'>Share on Facebook</button>
             </div>
           </div>
         </div>
