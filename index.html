@@ -6,7 +6,7 @@ layout: default
         {% for post in site.posts %}
         
         <div class="col m12 l6">
-          <div class="card cyan lighten-2">
+          <div class="card cyan lighten-1 z-depth-1">
             <div class="card-content white-text">
               <span class="card-title">{{ post.title }}</span>
               <p>{{ post.date | date: "%b %-d, %Y" }}</p><br/>
@@ -14,7 +14,7 @@ layout: default
             </div>
             <div class="card-action">
               <button class="white cyan-text lighten-5 waves-effect waves-cyan waves-light btn" onclick="window.location.href='{{ post.url | prepend: site.baseurl }}'">View Post</button>
-              <button class="white cyan-text lighten-5 waves-effect waves-cyan waves-light btn" href='#'>Share on Facebook</button>
+              <button class="white cyan-text lighten-5 waves-effect waves-light btn" href='#'>Share on Facebook</button>
             </div>
           </div>
         </div>
