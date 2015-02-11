@@ -2,9 +2,7 @@ body {
     margin: 0;
     padding: 0;
 }
-footer {
-     width: 100%;    
-}
+
 .clamp-module {
     overflow: hidden;
   display: -webkit-box;

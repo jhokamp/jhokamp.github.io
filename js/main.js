@@ -54,10 +54,10 @@ $(function () {
 
         function loadContent(href) {
             console.log("click fired");
-            $mainContent.find("#guts").fadeOut(200, function () { // fade out the content of the current page
+            $mainContent.find("#guts").stop(true,true).fadeOut(400, function () { // fade out the content of the current page
                 $mainContent.hide().load(href + " #guts", function () { // load the contents of whatever href is
-                    $mainContent.fadeIn(200, function () {
-                        $pageWrap.animate({
+                    $mainContent.stop(true,true).fadeIn(400, function () {
+                        $pageWrap.stop(true,true).animate({
                             height: baseHeight + $mainContent.height() + "px"
                         });
 
