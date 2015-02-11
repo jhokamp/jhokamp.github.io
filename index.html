@@ -13,7 +13,7 @@ layout: default
               <x class="clamp-module">{{ post.content | strip_html | truncatewords: 100}}</x>
             </div>
             <div class="card-action {{ site.css }} darken-2">
-              <button class="{{ site.css }} darken-1 white-text text-darken-3 waves-effect waves-light btn" onclick="window.location.href='{{ post.url | prepend: site.baseurl }}'">View Post</button>
+              <button href="{{ post.url | prepend: site.baseurl }}" class="{{ site.css }} darken-1 white-text text-darken-3 waves-effect waves-light btn">View Post</button>
               <button class="{{ site.css }} darken-1 white-text text-darken-3 waves-effect waves-light btn" href='#'>Bookmark!</button>
             </div>
           </div>
