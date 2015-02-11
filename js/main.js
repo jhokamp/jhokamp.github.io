@@ -57,32 +57,31 @@ $(function () {
             $mainContent.find("#guts").stop(true,true).fadeOut(400, function () { // fade out the content of the current page
                 $mainContent.hide().load(href + " #guts", function () { // load the contents of whatever href is
                     $mainContent.stop(true,true).fadeIn(400, function () {
-                        $pageWrap.stop(true,true).animate({
+                        $pageWrap.stop(true,true).velocity({
+                            easing: 'swing',
                             height: baseHeight + $mainContent.height() + "px"
                         });
-
                     });
-
-
-
                 });
-
             });
-
         }
-
         $(window).bind("popstate", function () {
             link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
             loadContent(link);
         });
-
-
-
     } else {
-
         // history is not supported; nothing fancy here
         console.log("no support");
-
     }
 
 });
+
+$(document).ready(
+
+  function() { 
+
+    $("html").niceScroll();
+
+  }
+
+);
