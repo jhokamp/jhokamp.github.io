@@ -1,7 +1,7 @@
 $(function () {
     $(".button-collapse").sideNav();
 })
-$(document).ready(function () {
+/*$(document).ready(function () {
     $(window).resize(function () {
         var bodyHeight = $("body").height();
         var vwptHeight = $(window).height();
@@ -10,7 +10,7 @@ $(document).ready(function () {
         }
     });
     $(window).resize();
-});
+});*/
 
 $(function () {
 
@@ -20,6 +20,7 @@ $(function () {
 
         // hijack the nav click event
         $("nav").delegate("a", "click", function () {
+            event.preventDefault();
             _href = $(this).attr("href");
 
             // change the url without a page refresh and add a history entry.
@@ -42,19 +43,16 @@ $(function () {
 
         function loadContent(href) {
             console.log("click fired");
-            $mainContent.find("#guts").fadeOut(2000, function () { // fade out the content of the current page
-
+            $mainContent.find("#guts").fadeOut(200, function () { // fade out the content of the current page
                 $mainContent.hide().load(href + " #guts", function () { // load the contents of whatever href is
-                    $mainContent.fadeIn(2000, function () {
-                        console.log("fade fn fired");
+                    $mainContent.fadeIn(200, function () {
                         $pageWrap.animate({
                             height: baseHeight + $mainContent.height() + "px"
                         });
+
                     });
 
-                    //$("nav a").removeClass("current");
 
-                    // $("nav a[href$='" + href + "']").addClass("current");
 
                 });
 
