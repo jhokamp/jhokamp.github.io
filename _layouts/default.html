@@ -5,8 +5,12 @@
 <body class="{{ site.css }} lighten-5">
     {% include header.html %}
     <div class="container">
-        <div class="wrapper">
-            {{ content }}
+        <div class="wrapper" id="page-wrap">
+            <section id="main-content">
+               <div id="guts">
+                {{ content }}
+                </div>
+            </section>
         </div>
     </div>
     {% include footer.html %}
