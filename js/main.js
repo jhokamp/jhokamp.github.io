@@ -57,11 +57,12 @@ $(function () {
             $mainContent.find("#guts").stop(true,true).fadeOut(400, function () { // fade out the content of the current page
                 $mainContent.hide().load(href + " #guts", function () { // load the contents of whatever href is
                     $mainContent.stop(true,true).fadeIn(400, function () {
-                        $pageWrap.stop(true,true).velocity({
+                        // bottom block was here
+                    });
+                    $pageWrap.stop(true,true).velocity({
                             easing: 'swing',
                             height: baseHeight + $mainContent.height() + "px"
                         });
-                    });
                 });
             });
         }
