@@ -19,7 +19,7 @@ $(function () {
         // history is supported; do magical things
 
         // hijack the nav click event
-        $("nav").delegate("a", "click", function () {
+        $("nav").delegate("a[internal]", "click", function () {
             event.preventDefault();
             _href = $(this).attr("href");
 
@@ -81,7 +81,10 @@ $(document).ready(
 
   function() { 
 
-    $("html").niceScroll();
+    $("html").niceScroll({
+        scrollspeed: 100,
+        mousescrollstep: 72
+    });
 
   }
 
