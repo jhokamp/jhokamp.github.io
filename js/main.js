@@ -1,16 +1,16 @@
 $(function () {
-    $(".button-collapse").sideNav();
-})
-/*$(document).ready(function () {
-    $(window).resize(function () {
-        var bodyHeight = $("body").height();
-        var vwptHeight = $(window).height();
-        if (vwptHeight > bodyHeight) {
-            $("footer").css("position", "absolute").css("bottom", 0);
-        }
-    });
-    $(window).resize();
-});*/
+        $(".button-collapse").sideNav();
+    })
+    /*$(document).ready(function () {
+        $(window).resize(function () {
+            var bodyHeight = $("body").height();
+            var vwptHeight = $(window).height();
+            if (vwptHeight > bodyHeight) {
+                $("footer").css("position", "absolute").css("bottom", 0);
+            }
+        });
+        $(window).resize();
+    });*/
 
 $(function () {
 
@@ -27,12 +27,12 @@ $(function () {
             history.pushState(null, null, _href);
             loadContent(_href);
         });
-//        $("body").delegate("div[href]", "click", function () {
-//            event.preventDefault();
-//            _href = $(this).attr("href");
-//            history.pushState(null, null, _href);
-//            loadContent(_href);
-//        });
+        //        $("body").delegate("div[href]", "click", function () {
+        //            event.preventDefault();
+        //            _href = $(this).attr("href");
+        //            history.pushState(null, null, _href);
+        //            loadContent(_href);
+        //        });
 
         // set up some variables
         var $mainContent = $("#main-content"),
@@ -46,16 +46,17 @@ $(function () {
 
         function loadContent(href) {
             console.log("click fired");
-            $mainContent.find("#guts").stop(true,true).fadeOut(600, function () { // fade out the content of the current page
+            $mainContent.find("#guts").stop(true, true).fadeOut(600, function () { // fade out the content of the current page
                 $mainContent.hide().load(href + " #guts", function () { // load the contents of whatever href is
-                    $('html, body').animate({scrollTop : 0},800);
-                    $mainContent.stop(true,true).fadeIn(600, function () {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 800);
+                    $mainContent.stop(true, true).fadeIn(600, function () {});
+                    $pageWrap.stop(true, true).velocity({
+                        easing: 'swing',
+                        duratio: 100,
+                        height: baseHeight + $mainContent.height() + "px"
                     });
-                    $pageWrap.stop(true,true).velocity({
-                            easing: 'swing',
-                            duratio: 100,
-                            height: baseHeight + $mainContent.height() + "px"
-                        });
                 });
             });
         }
@@ -72,32 +73,44 @@ $(function () {
 
 $(document).ready(
 
-  function() { 
+    function () {
 
-    $("html").niceScroll({
-        scrollspeed: 100,
-        mousescrollstep: 72
-    });
+        $("html").niceScroll({
+            scrollspeed: 100,
+            mousescrollstep: 72
+        });
 
-  }
+    }
 
 );
 
-$(document).ready(function(){
-	
-	//Check to see if the window is top if not then display button
-	$(window).scroll(function(){
-		if ($(this).scrollTop() > 100) {
-			$('.scrollToTop').fadeIn();
-		} else {
-			$('.scrollToTop').fadeOut();
-		}
-	});
-	
-	//Click event to scroll to top
-	$('.scrollToTop').click(function(){
-		$('html, body').animate({scrollTop : 0},800);
-		return false;
-	});
-	
+$(document).ready(function () {
+
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+
+});
+
+$(window).load(function () {
+    //$(".preloader").fadeOut();
+});
+
+$(document).ready(function () {
+    $(".xprebutton").click(function () {
+        $(".preloader").fadeOut();
+    });
 });

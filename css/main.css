@@ -33,3 +33,54 @@ nav {
 	right:40px;
 	display:none;
 }
+
+.preloader {
+     position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: visible;
+}
+
+.xpreloading {
+        width: 800px;
+    height: 5px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+.xpretext {
+    width: 800px;
+    height: 5px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 10px;
+}
+.xprebutton {
+    margin-left: 650px;
+    margin-top: -300px;
+}
+.xprecontainer {
+    margin-top: -360px;   
+}
+.xprecontainer2 {
+    margin-top: -220px;
+    margin-left: 220px;
+}
+.man {
+    fill: #fff;
+    width: 200px;
+}
+.preshadow {
+    padding-bottom: 40px;   
+}
