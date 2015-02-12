@@ -46,13 +46,14 @@ $(function () {
 
         function loadContent(href) {
             console.log("click fired");
-            $mainContent.find("#guts").stop(true,true).fadeOut(400, function () { // fade out the content of the current page
+            $mainContent.find("#guts").stop(true,true).fadeOut(600, function () { // fade out the content of the current page
                 $mainContent.hide().load(href + " #guts", function () { // load the contents of whatever href is
-                    $mainContent.stop(true,true).fadeIn(400, function () {
-                        // bottom block was here
+                    $('html, body').animate({scrollTop : 0},800);
+                    $mainContent.stop(true,true).fadeIn(600, function () {
                     });
                     $pageWrap.stop(true,true).velocity({
                             easing: 'swing',
+                            duratio: 100,
                             height: baseHeight + $mainContent.height() + "px"
                         });
                 });
