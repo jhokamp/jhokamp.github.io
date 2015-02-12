@@ -15,43 +15,24 @@ $(function () {
 $(function () {
 
     if (Modernizr.history) {
-
-        // history is supported; do magical things
-
-        // hijack the nav click event
         $("nav").delegate("a[internal]", "click", function () {
             event.preventDefault();
             _href = $(this).attr("href");
-
-            // change the url without a page refresh and add a history entry.
             history.pushState(null, null, _href);
-
-            // load the content
-            loadContent(_href); // fear not! we're going to build this function in the next code block
-
+            loadContent(_href);
         });
         $("body").delegate("button[href]", "click", function () {
             event.preventDefault();
             _href = $(this).attr("href");
-
-            // change the url without a page refresh and add a history entry.
             history.pushState(null, null, _href);
-
-            // load the content
-            loadContent(_href); // fear not! we're going to build this function in the next code block
-
+            loadContent(_href);
         });
-        $("body").delegate("div[href]", "click", function () {
-            event.preventDefault();
-            _href = $(this).attr("href");
-
-            // change the url without a page refresh and add a history entry.
-            history.pushState(null, null, _href);
-
-            // load the content
-            loadContent(_href); // fear not! we're going to build this function in the next code block
-
-        });
+//        $("body").delegate("div[href]", "click", function () {
+//            event.preventDefault();
+//            _href = $(this).attr("href");
+//            history.pushState(null, null, _href);
+//            loadContent(_href);
+//        });
 
         // set up some variables
         var $mainContent = $("#main-content"),
