@@ -12,4 +12,6 @@ css: "cyan"
 
 # Build settings
 markdown: kramdown
-highlighter: false
+highlighter: null #pygments
+lsi: false
+safe: false
