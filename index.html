@@ -6,7 +6,7 @@ layout: default
         {% for post in site.posts %}
         
         <div class="col m12 l6">
-          <div class="card {{ site.css }} darken-1 z-depth-1 waves-effect waves-light" href="{{ post.url | prepend: site.baseurl }}">
+          <div class="card {{ site.css }} darken-1 z-depth-1-half waves-effect waves-light" href="{{ post.url | prepend: site.baseurl }}">
             <div class="card-content white-text">
               <span class="card-title">{{ post.title }}</span>
               <p>{{ post.date | date: "%b %-d, %Y" }}</p><br/>
