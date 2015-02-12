@@ -26,3 +26,10 @@ nav {
     z-index: auto;
     will-change: contents !important;
 }
+
+.scrollToTop{
+	position:fixed;
+	top:100px;
+	right:40px;
+	display:none;
+}
