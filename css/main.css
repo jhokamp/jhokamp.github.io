@@ -91,6 +91,7 @@ nav {
 
 .scroll-1 .card-content {
      overflow-y: auto;
+    height: 390px;
 }
 
 /* Large desktop */
