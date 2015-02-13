@@ -51,7 +51,13 @@ $(function () {
                     $('html, body').animate({
                         scrollTop: 0
                     }, 800);
-                    $mainContent.stop(true, true).fadeIn(600, function () {});
+                    var s = skrollr.init();
+
+                    s.refresh();
+                    $mainContent.stop(true, true).fadeIn(600, function () {
+                    
+                            
+                    });
                     $pageWrap.stop(true, true).velocity({
                         easing: 'swing',
                         duration: 100,
