@@ -84,3 +84,44 @@ nav {
 .preshadow {
     padding-bottom: 40px;   
 }
+.scroll-1 {
+    position: fixed;
+  left: 50%;
+  top: 0%;
+}
+
+.scroll-1 .card-content {
+     overflow-y: auto;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) { 
+    .scroll-1 {
+          width: 1000px;
+          margin-left: -500px;
+    }
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .scroll-1 {
+          width: 700px;
+          margin-left: -350px;
+    }
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .scroll-1 {
+          width: 500px;
+          margin-left: -250px;
+    }
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .scroll-1 {
+          width: 450px;
+          margin-left: -225px;
+    }
+}
