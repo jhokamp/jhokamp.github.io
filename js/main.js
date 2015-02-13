@@ -106,11 +106,17 @@ $(document).ready(function () {
 });
 
 $(window).load(function () {
-    //$(".preloader").fadeOut();
+    $(".preloader").fadeOut();
+    $('html, body').animate({
+            scrollTop: 0
+        }, 800);
 });
 
-$(document).ready(function () {
-    $(".xprebutton").click(function () {
-        $(".preloader").fadeOut();
-    });
-});
+//$(document).ready(function () {
+//    $(".xprebutton").click(function () {
+//        $(".preloader").fadeOut();
+//        $('html, body').animate({
+//            scrollTop: 0
+//        }, 800);
+//    });
+//});
