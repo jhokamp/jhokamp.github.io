@@ -63,8 +63,6 @@ $(function () {
         baseHeight = $pageWrap.height() - $mainContent.height();
 
         function loadContent(href) {
-            console.log("click fired");
-
             $mainContent.find("#guts").stop(true, true).fadeOut(600, function () { // fade out the content of the current page
                 $mainContent.hide().load(href + " #guts", function () { // load the contents of whatever href is
                     $('html, body').animate({
@@ -74,9 +72,8 @@ $(function () {
                     var s = skrollr.init();
                     s.refresh();
                     $mainContent.stop(true, true).fadeIn(600, function () {
-
                     });
-                    $pageWrap.stop(true, true).velocity({
+                    $pageWrap.velocity({
                         easing: 'swing',
                         duration: 100,
                         height: baseHeight + $mainContent.height() + "px"
