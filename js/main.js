@@ -93,10 +93,9 @@ $(function () {
 });
 
 
-
+//scrolltotop
 $(document).ready(function () {
 
-    //Check to see if the window is top if not then display button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('.scrollToTop').fadeIn();
@@ -115,24 +114,10 @@ $(document).ready(function () {
 
 });
 
+//preloader hide on load
 $(window).load(function () {
     $(".preloader").fadeOut();
     $('html, body').animate({
         scrollTop: 0
     }, 800);
-});
-
-//$(document).ready(function () {
-//    $(".xprebutton").click(function () {
-//        $(".preloader").fadeOut();
-//        $('html, body').animate({
-//            scrollTop: 0
-//        }, 800);
-//    });
-//});
-
-$(document).ready(function () {
-    if ($('.scroll-1').height() > ($(window).height() - 200)) {
-        $('.scroll-1').find(".card-content").height($(window).height() - 300);
-    }
 });
