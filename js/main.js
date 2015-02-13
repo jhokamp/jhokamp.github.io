@@ -1,3 +1,21 @@
+var s;
+$(function () {
+    s = skrollr.init();
+
+    $("html").niceScroll({
+        scrollspeed: 100,
+        mousescrollstep: 72
+    });
+
+    $.scrolline({
+        reverse: false,
+        position: 'top',
+        backColor: '#2980b9',
+        frontColor: '#f1c40f',
+        weight: 5
+    });
+});
+
 $(function () {
         $(".button-collapse").sideNav();
     })
@@ -46,17 +64,17 @@ $(function () {
 
         function loadContent(href) {
             console.log("click fired");
+
             $mainContent.find("#guts").stop(true, true).fadeOut(600, function () { // fade out the content of the current page
                 $mainContent.hide().load(href + " #guts", function () { // load the contents of whatever href is
                     $('html, body').animate({
                         scrollTop: 0
                     }, 800);
-                    var s = skrollr.init();
 
+                    var s = skrollr.init();
                     s.refresh();
                     $mainContent.stop(true, true).fadeIn(600, function () {
-                    
-                            
+
                     });
                     $pageWrap.stop(true, true).velocity({
                         easing: 'swing',
@@ -77,24 +95,7 @@ $(function () {
 
 });
 
-$(document).ready(
 
-    function () {
-
-        $("html").niceScroll({
-            scrollspeed: 100,
-            mousescrollstep: 72
-        });
-//         $(".scroll-1").find(".card-content").niceScroll({
-//            scrollspeed: 100,
-//            mousescrollstep: 72
-//        });
-        
-        var s = skrollr.init();
-
-    }
-
-);
 
 $(document).ready(function () {
 
@@ -120,8 +121,8 @@ $(document).ready(function () {
 $(window).load(function () {
     $(".preloader").fadeOut();
     $('html, body').animate({
-            scrollTop: 0
-        }, 800);
+        scrollTop: 0
+    }, 800);
 });
 
 //$(document).ready(function () {
@@ -134,8 +135,7 @@ $(window).load(function () {
 //});
 
 $(document).ready(function () {
-        if($('.scroll-1').height()>($(window).height()-200))
-        {
-            $('.scroll-1').find(".card-content").height($(window).height()-300);   
-        }
+    if ($('.scroll-1').height() > ($(window).height() - 200)) {
+        $('.scroll-1').find(".card-content").height($(window).height() - 300);
+    }
 });

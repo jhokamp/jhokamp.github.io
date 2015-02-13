@@ -78,7 +78,6 @@ nav {
     margin-left: 220px;
 }
 .man {
-    fill: #fff;
     width: 200px;
 }
 .preshadow {
@@ -99,6 +98,13 @@ nav {
     .scroll-1 {
           width: 1000px;
           margin-left: -500px;
+    }
+}
+
+@media (max-width: 1200px) { 
+    .scroll-1 {
+          width: 900px;
+          margin-left: -450px;
     }
 }
  
