@@ -6,6 +6,11 @@ $(function () {
         scrollspeed: 100,
         mousescrollstep: 72
     });
+    
+    $(".scroll-1").find(".card-content").niceScroll({
+        scrollspeed: 100,
+        mousescrollstep: 72
+    });
 
     $.scrolline({
         reverse: false,
