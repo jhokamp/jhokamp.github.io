@@ -1,12 +1,45 @@
+function calcScrollr() {
+
+    var _diff = 5;
+    var _margin = 80;
+    var $_e = $(".scroll-1");
+
+    var cardht = 0;
+    var totalht = _margin;
+    var count = 0;
+
+    $_e.each(function () {
+        if((count+1)%2==0)
+        {
+            $_e.eq(count).find(".card").addClass("darken-1");
+        }
+        var dataval = 0;
+        var i = _margin;
+        cardht = $(this).height();
+        var temp = totalht;
+        $_e.eq(count).attr("style", "top:" + (temp + count * _diff) + "px");
+        for (var j = 0; temp - _margin + count * _diff >= 0; j++) {
+            $_e.eq(count).attr("data-" + dataval, "top:" + (temp + count * _diff) + "px");
+            dataval = dataval + cardht;
+            temp = temp - cardht;
+        }
+        count++;
+        totalht += cardht;
+        i += cardht;
+    });
+}
+
+
+
+
 var s;
 $(function () {
-    s = skrollr.init();
 
     $("html").niceScroll({
         scrollspeed: 100,
         mousescrollstep: 72
     });
-    
+
     $(".scroll-1").find(".card-content").niceScroll({
         scrollspeed: 100,
         mousescrollstep: 72
@@ -50,12 +83,6 @@ $(function () {
             history.pushState(null, null, _href);
             loadContent(_href);
         });
-        //        $("body").delegate("div[href]", "click", function () {
-        //            event.preventDefault();
-        //            _href = $(this).attr("href");
-        //            history.pushState(null, null, _href);
-        //            loadContent(_href);
-        //        });
 
         // set up some variables
         var $mainContent = $("#main-content"),
@@ -74,10 +101,18 @@ $(function () {
                         scrollTop: 0
                     }, 800);
 
+
+
+
                     var s = skrollr.init();
                     s.refresh();
-                    $mainContent.stop(true, true).fadeIn(600, function () {
-                    });
+
+                    $(".scroll-1").find(".card-content").niceScroll({
+                        scrollspeed: 100,
+                        mousescrollstep: 72
+                    }).resize();
+
+                    $mainContent.stop(true, true).fadeIn(600, function () {});
                     $pageWrap.velocity({
                         easing: 'swing',
                         duration: 100,
@@ -125,4 +160,6 @@ $(window).load(function () {
     $('html, body').animate({
         scrollTop: 0
     }, 800);
+    calcScrollr();
+    s = skrollr.init();
 });
