@@ -7,13 +7,14 @@ function calcScrollr() {
     var cardht = 0;
     var totalht = _margin;
     var count = 0;
+    var dataval;
 
     $_e.each(function () {
         if((count+1)%2==0)
         {
             $_e.eq(count).find(".card").addClass("darken-1");
         }
-        var dataval = 0;
+        dataval = 0;
         var i = _margin;
         cardht = $(this).height();
         var temp = totalht;
@@ -27,6 +28,7 @@ function calcScrollr() {
         totalht += cardht;
         i += cardht;
     });
+    $(".page-footer").attr("style", "margin-top: "+(dataval+500)+"px");
 }
 
 
@@ -103,8 +105,8 @@ $(function () {
 
 
 
-
-                    var s = skrollr.init();
+                    calcScrollr();
+                    s = skrollr.init();
                     s.refresh();
 
                     $(".scroll-1").find(".card-content").niceScroll({
