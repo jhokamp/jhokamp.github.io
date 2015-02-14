@@ -103,18 +103,22 @@ $(function () {
                         scrollTop: 0
                     }, 800);
 
-
-
-                    calcScrollr();
-                    s = skrollr.init();
-                    s.refresh();
-
                     $(".scroll-1").find(".card-content").niceScroll({
                         scrollspeed: 100,
                         mousescrollstep: 72
                     }).resize();
 
-                    $mainContent.stop(true, true).fadeIn(600, function () {});
+                    $mainContent.stop(true, true).fadeIn(800, function () {
+                    
+
+                    
+                    });
+                    
+                    calcScrollr();
+                    s = skrollr.init();
+                    s.refresh();
+                    
+                    
                     $pageWrap.velocity({
                         easing: 'swing',
                         duration: 100,
