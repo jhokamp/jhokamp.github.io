@@ -28,7 +28,7 @@ function calcScrollr() {
         totalht += cardht;
         i += cardht;
     });
-    $(".page-footer").attr("style", "margin-top: "+(dataval+500)+"px");
+    $(".page-footer").attr("style", "margin-top: "+(dataval+1000)+"px");
 }
 
 
