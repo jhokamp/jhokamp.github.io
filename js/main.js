@@ -1,14 +1,26 @@
 function calcScrollr() {
 
-    var _diff = 5;
+    var _diff = 8;
+    var _leftdiff = 0.25;
     var _margin = 80;
     var $_e = $(".scroll-1");
+    
+    if($_e.hasClass("blog")){
+        _diff = 10;   
+    }
 
     var cardht = 0;
     var totalht = _margin;
     var count = 0;
+    var totalcount = 0;
     var dataval;
-
+    
+    
+    
+    $_e.each(function () {
+        totalcount++;
+    });
+    
     $_e.each(function () {
         if((count+1)%2==0)
         {
@@ -19,6 +31,7 @@ function calcScrollr() {
         cardht = $(this).height();
         var temp = totalht;
         $_e.eq(count).attr("style", "top:" + (temp + count * _diff) + "px");
+        $_e.eq(count).attr("style", "left:" + (50-(totalcount*_leftdiff/2)+(count * _leftdiff)) + "%");
         for (var j = 0; temp - _margin + count * _diff >= 0; j++) {
             $_e.eq(count).attr("data-" + dataval, "top:" + (temp + count * _diff) + "px");
             dataval = dataval + cardht;
@@ -29,6 +42,11 @@ function calcScrollr() {
         i += cardht;
     });
     $(".page-footer").attr("style", "margin-top: "+(dataval+1000)+"px");
+    
+    //fix for 1st slide ignoring margin till scroll
+        $('html, body').animate({
+            scrollTop: 1
+        }, 1);
 }
 
 
@@ -42,10 +60,10 @@ $(function () {
         mousescrollstep: 72
     });
 
-    $(".scroll-1").find(".card-content").niceScroll({
-        scrollspeed: 100,
-        mousescrollstep: 72
-    });
+//    $(".scroll-1").find(".card-content").niceScroll({
+//        scrollspeed: 100,
+//        mousescrollstep: 72
+//    });
 
     $.scrolline({
         reverse: false,
@@ -103,10 +121,10 @@ $(function () {
                         scrollTop: 0
                     }, 800);
 
-                    $(".scroll-1").find(".card-content").niceScroll({
-                        scrollspeed: 100,
-                        mousescrollstep: 72
-                    }).resize();
+//                    $(".scroll-1").find(".card-content").niceScroll({
+//                        scrollspeed: 100,
+//                        mousescrollstep: 72
+//                    }).resize();
 
                     $mainContent.stop(true, true).fadeIn(800, function () {
                     
@@ -141,7 +159,6 @@ $(function () {
 
 //scrolltotop1
 $(document).ready(function () {
-
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('.scrollToTop').fadeIn();
@@ -157,11 +174,17 @@ $(document).ready(function () {
         }, 800);
         return false;
     });
+    
+
 
 });
 
 //preloader hide on load
 $(window).load(function () {
+        //fix for 1st slide ignoring margin till scroll
+    $('html, body').animate({
+        scrollTop: 1
+    }); //add below fadeout to after fn
     $(".preloader").fadeOut();
     $('html, body').animate({
         scrollTop: 0
