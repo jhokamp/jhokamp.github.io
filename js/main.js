@@ -1,12 +1,18 @@
 function calcScrollr() {
 
     var _diff = 8;
-    var _leftdiff = 0.25;
+    var _leftdiff = 0.45;
+    var _startscrollat = $('#non-skrollr').height()+400;
     var _margin = 80;
+    var _visibleatstart = false;
+    var _hideatend = false;
     var $_e = $(".scroll-1");
 
     if ($_e.hasClass("blog")) {
         _diff = 10;
+        _startscrollat = 0;
+        _visibleatstart = true;
+        _hideatend = false;
     }
 
     var cardht = 0;
@@ -18,6 +24,16 @@ function calcScrollr() {
 
 
     $_e.each(function () {
+
+        if (!_visibleatstart) {
+            $_e.eq(totalcount).attr("data-" + (_startscrollat - 40), "opacity: 1");
+            $_e.eq(totalcount).attr("data-" + (_startscrollat - 140), "opacity: 0");
+            $_e.eq(totalcount).attr("data-" + (_startscrollat - 150), "display: block");
+            $_e.eq(totalcount).attr("data-1", "opacity: 0");
+            $_e.eq(totalcount).attr("data-0", "display: none");
+        }
+
+
         totalcount++;
     });
 
@@ -25,7 +41,7 @@ function calcScrollr() {
         if ((count + 1) % 2 == 0) {
             $_e.eq(count).find(".card").addClass("darken-1");
         }
-        dataval = 0;
+        dataval = _startscrollat;
         var i = _margin;
         cardht = $(this).height();
         var temp = totalht;
@@ -36,9 +52,20 @@ function calcScrollr() {
             dataval = dataval + cardht;
             temp = temp - cardht;
         }
-        count++;
+        
         totalht += cardht;
         i += cardht;
+        
+        if (_hideatend) {
+            var endpos = _startscrollat + (totalcount * $_e.eq(0).height());
+            $_e.eq(count).attr("data-" + (endpos - 129), "display: block");
+            $_e.eq(count).attr("data-" + (endpos - 128), "opacity: 1");
+            $_e.eq(count).attr("data-" + (endpos - 11), "display: none");
+            $_e.eq(count).attr("data-" + (endpos - 22), "opacity: 0");
+        }
+        
+        count++;
+        
     });
     $(".page-footer").attr("style", "margin-top: " + (dataval + 1000) + "px");
 
@@ -56,11 +83,6 @@ $(function () {
         mousescrollstep: 72
     });
 
-    //    $(".scroll-1").find(".card-content").niceScroll({
-    //        scrollspeed: 100,
-    //        mousescrollstep: 72
-    //    });
-
     $.scrolline({
         reverse: false,
         position: 'top',
@@ -73,17 +95,6 @@ $(function () {
 $(function () {
         $(".button-collapse").sideNav();
     })
-    /*$(document).ready(function () {
-        $(window).resize(function () {
-            var bodyHeight = $("body").height();
-            var vwptHeight = $(window).height();
-            if (vwptHeight > bodyHeight) {
-                $("footer").css("position", "absolute").css("bottom", 0);
-            }
-        });
-        $(window).resize();
-    });*/
-
 $(function () {
 
     if (Modernizr.history) {
@@ -142,8 +153,7 @@ $(function () {
             loadContent(link);
         });
     } else {
-        // history is not supported; nothing fancy here
-        console.log("no support");
+        console.log("no support for in-page loading");
     }
 
 });
@@ -180,8 +190,8 @@ $(window).load(function () {
     $('html, body').animate({
         scrollTop: 1
     }, 800, function () {});
-        calcScrollr();
-        s = skrollr.init();
-    
+    calcScrollr();
+    s = skrollr.init();
+
 
 });
