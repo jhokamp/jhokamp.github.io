@@ -116,6 +116,11 @@ nav {
     padding: 20px;
     width: 100%;
     min-height: 100px;
+    transition: all 0.2s ease;
+}
+
+.advantage:hover {
+    opacity: 0.8;
 }
 
 .card .cover {

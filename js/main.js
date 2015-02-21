@@ -67,7 +67,7 @@ function calcScrollr() {
         count++;
         
     });
-    $(".page-footer").attr("style", "margin-top: " + (dataval + 1000) + "px");
+    $(".page-footer").attr("style", "margin-top: " + (dataval + 800) + "px");
 
 
 }
@@ -153,7 +153,7 @@ $(function () {
             loadContent(link);
         });
     } else {
-        console.log("no support for in-page loading");
+        console.log("No support for in-page loading. Try using chrome.");
     }
 
 });
