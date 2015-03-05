@@ -12,6 +12,6 @@ css: "blue"
 
 # Build settings
 markdown: kramdown
-highlighter: null #pygments
+highlighter: pygments
 lsi: false
 safe: false
