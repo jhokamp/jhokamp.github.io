@@ -1,6 +1,6 @@
 # Site settings
 title: Jörg Hokamp
-email: info@joerghokamp.de
+email: jh@hokamp-it.de
 description: > # this means to ignore newlines until "baseurl:"
   Hi! I'm Joerg Hokamp - Linux enthusiast, open-source fan,
   embedded developer and it-consultant.
@@ -8,7 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jhokamp.github.io" # the base hostname & protocol for your site
 twitter_username: hamburgkind
 github_username:  jhokamp
-css: "blue"
+css: "grey"
 
 # Build settings
 markdown: kramdown
