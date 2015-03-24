@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Impressum
 permalink: /about/
 ---
 <b>Hokamp IT-Consulting</b><br>
