@@ -2,8 +2,8 @@
 title: Jörg Hokamp
 email: jh@hokamp-it.de
 description: > # this means to ignore newlines until "baseurl:"
-Willkommen bei Hokamp IT-Consulting! Gerne beraten wir Sie zu den Themen Internet, Server, Housing- und Hostingdienstleistungen, Accessprodukte wie xDSL oder LTE. 
-Wenn Sie einen Partner für komplexe Projekte, Netzwerkmigrationen, IPv4 und IPv6 suchen, zögern Sie nicht, uns zu kontaktieren!
+  Willkommen bei Hokamp IT-Consulting! Gerne beraten wir Sie zu den Themen Internet, Server, Housing- und Hostingdienstleistungen, Accessprodukte wie xDSL oder LTE. 
+  Wenn Sie einen Partner für komplexe Projekte, Netzwerkmigrationen, IPv4 und IPv6 suchen, zögern Sie nicht, uns zu kontaktieren!
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jhokamp.github.io" # the base hostname & protocol for your site
 twitter_username: hamburgkind
